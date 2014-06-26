@@ -45,7 +45,12 @@ public class BufferTest6 {
     buffer.limit(12);
     ByteBufferUtility.printByteBuffer(buffer);
     System.out.println();
-    ByteBufferUtility.printByteBuffer(buffer.slice());
+    ByteBuffer sliecedBuffer = buffer.slice();
+    ByteBufferUtility.printByteBuffer(sliecedBuffer);
+
+    sliecedBuffer.put((byte) 0x99);
+    ByteBufferUtility.printByteBuffer(buffer);
+    ByteBufferUtility.printByteBuffer(sliecedBuffer);
 
     // Wrapping
     System.out.println("\nCreate ByteBuffer using wrap()");
