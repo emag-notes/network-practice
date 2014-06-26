@@ -3,13 +3,16 @@ package org.emamotor.nio.practice;
 import java.nio.ByteBuffer;
 
 /**
+ * MAVEN_OPTS="-Xmx8192m" mvn clean compile exec:java -Dexec.mainClass=org.emamotor.nio.practice.BufferTest7
  * @author tanabe
  */
 public class BufferTest7 {
 
+  private static final int CAPACITY = Integer.MAX_VALUE / 8 * 7;
+
   public BufferTest7() {
-    ByteBuffer normalBuffer = ByteBuffer.allocate(100000000);
-    ByteBuffer directBuffer = ByteBuffer.allocateDirect(100000000);
+    ByteBuffer normalBuffer = ByteBuffer.allocate(CAPACITY);
+    ByteBuffer directBuffer = ByteBuffer.allocateDirect(CAPACITY);
 
     ByteBufferUtility.initByteBuffer(normalBuffer);
     System.out.println("Normal Buffer: " + normalBuffer);
