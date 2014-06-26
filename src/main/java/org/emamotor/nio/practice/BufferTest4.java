@@ -65,6 +65,9 @@ public class BufferTest4 {
     System.out.println();
 
     buffer.put(srcBuffer);
+    System.out.println("src:");
+    ByteBufferUtility.printByteBuffer(srcBuffer);
+    System.out.println();
     ByteBufferUtility.printByteBuffer(buffer);
 
     System.out.println("\nBuffer put(int index, byte b)");
