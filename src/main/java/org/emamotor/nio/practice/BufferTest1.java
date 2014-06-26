@@ -40,7 +40,7 @@ public class BufferTest1 {
     // limit を position より小さくすると
     System.out.println("\nlimit を 1 へ移動 (limit < position)");
     try {
-      buffer.limit(1);
+      buffer.limit(1); // 例外は発生しない。position は limit と同じ値にされる
     } catch (IllegalArgumentException ex) {
       ex.printStackTrace();
     }
