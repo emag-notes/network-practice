@@ -30,3 +30,4 @@ rebel.xml
 
 # misc
 *.txt
+!sample.txt
