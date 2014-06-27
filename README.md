@@ -1,3 +1,4 @@
-# NIO Practice
+# Network Practice
 
-NIO の勉強用
+ネットワーク処理のお勉強(Java 中心)。
+
