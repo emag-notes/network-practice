@@ -1,9 +1,9 @@
-package org.emamotor.nio;
+package org.emamotor.nio.buffer;
 
 import java.nio.ByteBuffer;
 
 /**
- * MAVEN_OPTS="-Xmx8192m" mvn clean compile exec:java -Dexec.mainClass=org.emamotor.nio.BufferTest7
+ * MAVEN_OPTS="-Xmx8192m" mvn clean compile exec:java -Dexec.mainClass=org.emamotor.nio.buffer.BufferTest7
  * @author tanabe
  */
 public class BufferTest7 {

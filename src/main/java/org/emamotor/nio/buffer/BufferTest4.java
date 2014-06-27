@@ -1,4 +1,4 @@
-package org.emamotor.nio;
+package org.emamotor.nio.buffer;
 
 import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
