@@ -21,9 +21,8 @@ public class ChannelTest1 {
   }
 
   public void write(String filename) {
-    try {
-      FileOutputStream stream = new FileOutputStream(filename);
-      FileChannel channel = stream.getChannel();
+    try (FileOutputStream stream = new FileOutputStream(filename);
+         FileChannel channel = stream.getChannel()) {
 
       byte[] bytes = TEXT.getBytes();
 
@@ -31,7 +30,6 @@ public class ChannelTest1 {
 
       channel.write(buffer);
 
-      channel.close();
     } catch (FileNotFoundException ex) {
       ex.printStackTrace();
     } catch (IOException ex) {
@@ -40,9 +38,8 @@ public class ChannelTest1 {
   }
 
   public void read(String filename) {
-    try {
-      FileInputStream stream = new FileInputStream(filename);
-      FileChannel channel = stream.getChannel();
+    try (FileInputStream stream = new FileInputStream(filename);
+         FileChannel channel = stream.getChannel()) {
 
       ByteBuffer buffer = ByteBuffer.allocate((int) channel.size());
       channel.read(buffer);
@@ -52,7 +49,6 @@ public class ChannelTest1 {
       buffer.get(bytes);
       System.out.println("Buffer: " + new String(bytes));
 
-      channel.close();
     } catch (FileNotFoundException ex) {
       ex.printStackTrace();
     } catch (IOException ex) {
