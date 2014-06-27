@@ -27,3 +27,6 @@ target
 
 # JRebel
 rebel.xml
+
+# misc
+*.txt
