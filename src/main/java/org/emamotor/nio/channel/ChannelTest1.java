@@ -1,4 +1,4 @@
-package channel;
+package org.emamotor.nio.channel;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
