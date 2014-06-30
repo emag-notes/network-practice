@@ -10,6 +10,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
 /**
+ * mvn compile exec:java -Dexec.mainClass=org.emamotor.nio.socket.SocketTestClient1 -Dexec.args="[ip-addr]"
  * @author tanabe
  */
 public class SocketTestServer1 {
