@@ -28,6 +28,8 @@ public class SocketTestServer1 {
         = new InetSocketAddress(InetAddress.getLocalHost(), PORT);
 
       serverSocketChannel.socket().bind(address);
+
+      System.out.println("SocketTestServer1 start.");
     } catch (IOException ex) {
       ex.printStackTrace();
       System.exit(1);
@@ -39,7 +41,7 @@ public class SocketTestServer1 {
       try {
         SocketChannel socketChannel = serverSocketChannel.accept();
 
-        System.out.println(socketChannel.socket().getInetAddress() + " connect.");
+        System.out.println(socketChannel.socket().getRemoteSocketAddress() + " connect.");
 
         new MessageRepeater(socketChannel).start();
       } catch (IOException ex) {
@@ -80,13 +82,13 @@ public class SocketTestServer1 {
           }
 
           buffer.flip();
-          System.out.println(socketChannel.socket().getInetAddress()
+          System.out.println(socketChannel.socket().getRemoteSocketAddress()
             + " : " + decoder.decode(buffer.duplicate()));
 
           socketChannel.write(buffer);
         }
       } finally {
-        System.out.println(socketChannel.socket().getInetAddress() + " closed.");
+        System.out.println(socketChannel.socket().getRemoteSocketAddress() + " closed.");
         socketChannel.close();
       }
     }
