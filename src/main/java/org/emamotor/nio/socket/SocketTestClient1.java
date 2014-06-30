@@ -13,6 +13,7 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 
 /**
+ * mvn compile exec:java -Dexec.mainClass=org.emamotor.nio.socket.SocketTestClient1 -Dexec.args="[server-address]"
  * @author tanabe
  */
 public class SocketTestClient1 {
